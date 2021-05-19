@@ -12,7 +12,7 @@
       }">
       <template v-if="block.image">
         <img
-          :src="windowWidth < 769 ? block.image.mobile : block.image.desktop"
+          :src="windowWidth > 768 ? (windowWidth > 1799 ? block.image.xl : block.image.desktop) : block.image.mobile"
         />
       </template>
     </li>
@@ -27,14 +27,14 @@ export default {
       return [
         {
           name: 'phone',
-          image: { mobile: '/img/mock/m-phone.jpg', desktop: '/img/mock/phone.jpg' },
+          image: { mobile: '/img/mock/m-phone.jpg', desktop: '/img/mock/phone.jpg', xl: '/img/mock/phone-xl.jpg' },
           show: false,
           time: [0, 3.5],
           background: '#000'
         },
         {
           name: 'theculture',
-          image: { mobile: '/img/mock/m-logo.png', desktop: '/img/mock/logo.png' },
+          image: { mobile: '/img/mock/m-logo.png', desktop: '/img/mock/logo.png', xl: '/img/mock/logo.png' },
           show: false,
           time: [3.5, 6],
           background: '#000'
@@ -48,7 +48,7 @@ export default {
         },
         {
           name: 'bag',
-          image: { mobile: '/img/mock/m-bag.jpg', desktop: '/img/mock/bag.jpg' },
+          image: { mobile: '/img/mock/m-bag.jpg', desktop: '/img/mock/bag.jpg', xl: '/img/mock/bag-xl.jpg' },
           show: false,
           time: [9, 10],
           background: '#000'
@@ -62,7 +62,7 @@ export default {
         },
         {
           name: 'cup',
-          image: { mobile: '/img/mock/m-mug.jpg', desktop: '/img/mock/mug.jpg' },
+          image: { mobile: '/img/mock/m-mug.jpg', desktop: '/img/mock/mug.jpg', xl: '/img/mock/mug-xl.jpg' },
           show: false,
           time: [17, 18],
           background: '#000'
@@ -76,7 +76,7 @@ export default {
         },
         {
           name: 'mag',
-          image: { mobile: '/img/mock/m-mag.jpg', desktop: '/img/mock/mag.jpg' },
+          image: { mobile: '/img/mock/m-mag.jpg', desktop: '/img/mock/mag.jpg', xl: '/img/mock/mag-xl.jpg' },
           show: false,
           time: [26.1, 27.1],
           background: '#000'
@@ -90,14 +90,14 @@ export default {
         },
         {
           name: 'sweater',
-          image: { mobile: '/img/mock/m-sweater.jpg', desktop: '/img/mock/sweater.jpg' },
+          image: { mobile: '/img/mock/m-sweater.jpg', desktop: '/img/mock/sweater.jpg', xl: '/img/mock/sweater-xl.jpg' },
           show: false,
           time: [35, 36],
           background: '#000'
         },
         {
           name: 'logo2',
-          image: { mobile: '/img/mock/m-logo.png', desktop: '/img/mock/logo.png' },
+          image: { mobile: '/img/mock/m-logo.png', desktop: '/img/mock/logo.png', xl: '/img/mock/logo.png' },
           show: false,
           time: [43, 44],
           background: '#000'

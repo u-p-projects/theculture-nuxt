@@ -7,16 +7,25 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'theculture-vue',
+    title: 'The Culture',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'The Culture is a weekly conversation show focusing on film, music, TV, streaming, books and art.' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'The Culture' },
+      { property: 'og:description', content: 'The Culture is a weekly conversation show focusing on film, music, TV, streaming, books and art.' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'The Culture' },
+      { name: 'twitter:description', content: 'The Culture is a weekly conversation show focusing on film, music, TV, streaming, books and art.' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
