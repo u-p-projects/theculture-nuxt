@@ -78,5 +78,10 @@ export default {
   img {
     display: none;
   }
+
+  @include mobile {
+    // display: none !important;
+    opacity: 0;
+  }
 }
 </style>

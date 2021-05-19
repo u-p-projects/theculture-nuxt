@@ -135,5 +135,14 @@ export default {
       -webkit-text-fill-color: #ffd600;
     }
   }
+
+  @include mobile {
+    bottom: 20px;
+    padding: 0 10px;
+    h3 {
+      font-size: 9.2vw;
+      line-height: 1.2em;
+    }
+  }
 }
 </style>

@@ -115,5 +115,9 @@ export default {
   &:after {
     bottom: 12px;
   }
+
+  @include mobile {
+    transform: translateY(-2px) translateX(6px);
+  }
 }
 </style>

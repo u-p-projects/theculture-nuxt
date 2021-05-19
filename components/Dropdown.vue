@@ -45,9 +45,6 @@
           <li>
             <a href="http://hyperurl.co/nnxbd8">Spotify</a>
           </li>
-          <li>
-            <a href="http://hyperurl.co/nnxbd8">Google podcasts</a>
-          </li>
         </ul>
         <div class="description">
           <p>
@@ -216,11 +213,57 @@ export default {
   }
 
   @include mobile {
+    padding: 10px 0 0 0;
+    overflow: scroll;
+    .top {
+      ul {
+        padding: 10px;
+        li {
+          display: none !important;
+
+          &:first-child, &.menu {
+            display: flex !important;
+          }
+
+          &.menu {
+            padding: 10px;
+            min-width: unset;
+          }
+        }
+      }
+    }
     .body {
+      padding: 10px 10px 40px 10px;
       .row {
-        &--mobile {
+        &--information {
+          flex-direction: column;
+          margin: 0 0 20px 0;
+
           .links {
+            width: 100%;
+            font-size: 27px;
+            line-height: 29px;
             display: block;
+            margin: 0 0 20px 0;
+
+            li {
+              width: 100%;
+              text-align: center;
+
+              &:first-child {
+                text-align: left;
+                margin: 0 0 20px 0;
+              }
+
+              a {
+                display: inline-block;
+                margin: 10px;
+                margin-bottom: calc(5vh - 10px);
+                padding: 20px;
+                border: 2px solid white;
+                border-radius: 50px;
+              }
+            }
           }
         }
 
@@ -228,6 +271,12 @@ export default {
           .links {
             display: none;
           }
+        }
+
+        .description {
+          font-size: 19px;
+          line-height: 21px;
+          padding: 0 0;
         }
       }
     }

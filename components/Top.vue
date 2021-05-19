@@ -234,7 +234,27 @@ $padding: 20px;
         right: 0;
         top: 0;
         padding: 20px;
-        // justify-content: flex-end;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 10px 0 0 0;
+    // margin: 10px 0 0 0;
+    ul {
+      padding: 10px;
+      .item {
+        display: none !important;
+        min-width: unset;
+
+        &:first-child, &.menu {
+          display: flex !important;
+        }
+
+        &.menu {
+          padding: 10px;
+          min-width: unset;
+        }
       }
     }
   }
