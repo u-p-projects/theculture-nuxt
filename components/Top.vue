@@ -175,8 +175,6 @@ export default {
           return state.time.currentTime > color.time[0] && state.time.currentTime < color.time[1]
         })
 
-        // console.log('image index: ', showContainerIndex)
-
         if (colorIndex !== -1) {
           this.currentColor = this.colors[colorIndex].color
         }
@@ -234,6 +232,7 @@ $padding: 20px;
         right: 0;
         top: 0;
         padding: 20px;
+        min-width: unset;
       }
     }
   }

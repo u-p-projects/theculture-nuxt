@@ -39,8 +39,8 @@ export default {
   data() {
     return {
       cursor: {
-        x: 0,
-        y: 0
+        x: (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 2,
+        y: (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 2
       },
       showCursor: true,
       playing: false
@@ -50,10 +50,7 @@ export default {
     // subscribe to showCursor updates
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === 'time/setShowCursor') {
-        console.log('subscribe showCursor', state.time.showCursor)
         this.showCursor = state.time.showCursor
-
-        console.log(this.showCursor)
       }
     })
   },
@@ -62,6 +59,7 @@ export default {
       const scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop
 
       this.cursor.x = $evt.pageX
+
       this.cursor.y = $evt.pageY - scrollTop
     },
     toggleVideo(state) {

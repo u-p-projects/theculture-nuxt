@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     updateCursor(state) {
-      console.log('showCursor: ', state)
       this.$store.commit('time/setShowCursor', state)
     }
   }
