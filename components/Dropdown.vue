@@ -214,7 +214,9 @@ export default {
 
   @include mobile {
     padding: 10px 0 0 0;
+    min-height: 100vh;
     overflow: scroll;
+
     .top {
       ul {
         padding: 10px;
@@ -233,7 +235,8 @@ export default {
       }
     }
     .body {
-      padding: 10px 10px 40px 10px;
+      display: inline-block;
+      padding: 10px 10px 100px 10px;
       .row {
         &--information {
           flex-direction: column;

@@ -239,6 +239,7 @@ $padding: 20px;
   }
 
   @include mobile {
+    position: fixed;
     padding: 10px 0 0 0;
     // margin: 10px 0 0 0;
     ul {
