@@ -1,0 +1,190 @@
+// Global
+html, body {
+	overflow: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: $default;
+	font-size: 16px;
+	line-height: 24px;
+	background: $white;
+	transition: background-color $fastTransitionSpeed;
+}
+
+html.loading {
+	pointer-events:none;
+}
+
+body {
+	transition: background-color $slowTransitionSpeed;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+body.blackBackground {
+	background:$yellow;
+
+	#captionContainer {
+		color:$white;
+		background:$black;
+	}
+
+}
+
+body.yellowBackground {
+	background:$yellow;
+
+	#captionContainer {
+		background:$yellow;
+	}
+
+}
+
+a {
+	text-decoration:none;
+	color:inherit;
+}
+
+#fullscreenContainer {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+// Monologue video
+#monologue {
+	width:100%;
+	transition:filter $slowTransitionSpeed;
+}
+
+#monologue.blurred {
+	filter:blur(30px);
+}
+
+#monologueContainer {
+	width:40%;
+	border-radius:8px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translateX(-50%) translateY(-50%) scale(5);
+	z-index:50;
+	opacity:0;
+	transition:width $fastTransitionSpeed;
+	overflow:hidden;
+	background:$green;
+}
+
+#monologueContainer.loaded {
+	opacity:1;
+	transform:translateX(-50%) translateY(-50%) scale(1);
+	transition:opacity $slowTransitionSpeed, transform $slowTransitionSpeed, width $fastTransitionSpeed, border-radius $fastTransitionSpeed;
+	transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+
+#monologueContainer.loaded.playing {
+	pointer-events:none;
+	cursor: default;
+}
+
+#monologueContainer.larger {
+	width:60%;
+	border-radius:16px;
+}
+
+#monologueContainer.loaded.spin {
+	animation:spin 1.5s forwards;
+	transform-origin:0 0;
+}
+
+// Cursor
+#cursor {
+	width:350px;
+	height:350px;
+	position:fixed;
+	overflow:hidden;
+	transform:translateX(-175px) translateY(-175px);
+	z-index:100;
+	opacity:0;
+	transition:transform $veryFastTransitionSpeed;
+	pointer-events:none;
+}
+
+#cursor.loaded {
+	transition:opacity $slowTransitionSpeed, transform $veryFastTransitionSpeed, width $veryFastTransitionSpeed, height $veryFastTransitionSpeed;
+	opacity:1;
+}
+
+#cursor.pause {
+	width:70px;
+	height:70px;
+	transform:translateX(-35px) translateY(-35px);
+}
+
+#cursorWrapper {
+	position:relative;
+}
+
+#cursorWrapper img {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	transition:opacity $veryFastTransitionSpeed;
+}
+
+#cursorWrapper img:first-child {
+	z-index:2;
+	opacity:1;
+}
+
+#cursorWrapper img:nth-child(2) {
+	z-index:1;
+	opacity:0;
+}
+
+#cursorWrapper img:nth-child(3) {
+	opacity:0;
+}
+
+#cursor.pause {
+	#cursorWrapper img:nth-child(1) { opacity:0; }
+	#cursorWrapper img:nth-child(2) { opacity:1; }
+	#cursorWrapper img:nth-child(3) { opacity:0; }
+
+}
+
+#cursor.reload {
+	 #cursorWrapper img:nth-child(3) { opacity:1; }
+	 #cursorWrapper img:nth-child(2) { opacity:0; }
+	 #cursorWrapper img:nth-child(1) { opacity:0; }
+
+}
+
+#captionContainer {
+	position:fixed;
+	bottom:10px;
+	font-size:30px;
+	left:50%;
+	transform:translateX(-50%);
+	text-align:center;
+	font-family:$default;
+	opacity:0;
+	z-index:210;
+	transition:opacity $fastTransitionSpeed, color $fastTransitionSpeed, background-color $slowTransitionSpeed;
+	background:$white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+#captionContainer.visible {
+	opacity:1;
+}
+
+body.videoIsPaused {
+	animation-play-state: paused;
+}
