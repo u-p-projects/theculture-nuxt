@@ -7,6 +7,8 @@
         'menu-btn--active': active
       }
     ]"
+    @mouseover="() => updateCursor(false)"
+    @mouseout="() => updateCursor(true)"
     @click="() => $emit('toggle', !active)">
     <span>Menu</span>
   </button>
@@ -23,6 +25,12 @@ export default {
     menuColor: {
       type: String,
       default: 'black'
+    }
+  },
+  methods: {
+    updateCursor(state) {
+      console.log('showCursor: ', state)
+      this.$store.commit('time/setShowCursor', state)
     }
   }
 }

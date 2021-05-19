@@ -92,11 +92,6 @@
               Email
             </a>
           </li>
-          <!-- <li>
-            <div class="caption">
-              Immersive Video concept originally designed and development by Gabe Ferreira. Adapted for Schwartz Media by U-P.
-            </div>
-          </li> -->
         </ul>
       </div>
     </main>

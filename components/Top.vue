@@ -15,7 +15,9 @@
         :class="{
           'item--show': currentItems.includes(key)
         }">
-        <p>
+        <p
+          @mouseenter="() => $store.commit('time/setShowCursor', false)"
+          @mouseleave="() => $store.commit('time/setShowCursor', true)">
           <template v-if="item.type === 'text'">
             {{ item.name }}
           </template>
@@ -81,7 +83,7 @@ export default {
           name: 'Apple Podcasts',
           type: 'link',
           link: 'https://podcasts.apple.com/au/podcast/7am/id1461999702',
-          time: [38, 46]
+          time: [39, 46]
         },
         {
           name: 'Spotify',
@@ -95,11 +97,11 @@ export default {
       return [
         {
           color: '#fff',
-          time: [3.5, 6.7]
+          time: [3.5, 5.9]
         },
         {
           color: '#000',
-          time: [6.7, 8.9]
+          time: [6, 8.9]
         },
         {
           color: '#fff',
@@ -210,17 +212,20 @@ $padding: 20px;
       display: none;
       text-transform: uppercase;
       justify-content: center;
-
-      &:first-child {
-        // first child
-      }
+      min-width: 174px;
 
       &--show, &--break {
         display: flex;
       }
 
       &--break {
-        min-width: 104px;
+        min-width: 180px;
+      }
+
+      a {
+        &:hover {
+          border-bottom: 2px solid;
+        }
       }
 
       &.menu {

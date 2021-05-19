@@ -19,13 +19,6 @@
         class="pause"
         src="~/assets/img/cursor-pause.svg">
     </div>
-    <!-- <div id="cursor" class="play">
-      <div id="cursorWrapper">
-        <img src="assets/img/cursor/cursor-play.svg">
-        <img src="assets/img/cursor/cursor-pause.svg">
-        <img src="assets/img/cursor/cursor-reload.svg">
-      </div>
-    </div> -->
   </aside>
 </template>
 
@@ -53,9 +46,6 @@ export default {
       type: String,
       default: 'pause'
     }
-  },
-  mounted() {
-
   }
 }
 </script>
@@ -67,6 +57,11 @@ export default {
   height: 70px;
   transform: translate(-50%, -50%);
   cursor: none;
+  display: none;
+
+  &--show {
+    display: block;
+  }
 
   &--pause {
     img.play {

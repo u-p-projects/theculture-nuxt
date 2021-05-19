@@ -36,14 +36,14 @@ export default {
           name: 'theculture',
           image: { mobile: '/img/mock/m-logo.png', desktop: '/img/mock/logo.png' },
           show: false,
-          time: [3.5, 6.8],
+          time: [3.5, 6],
           background: '#000'
         },
         {
           name: 'sevenAM',
           image: false,
           show: false,
-          time: [6.8, 7.8],
+          time: [6, 7.8],
           background: '#3388ff'
         },
         {
@@ -114,12 +114,9 @@ export default {
   mounted() {
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === 'time/setCurrentTime') {
-        // show time
         const showContainerIndex = this.containers.findIndex((container) => {
           return state.time.currentTime > container.time[0] && state.time.currentTime < container.time[1]
         })
-
-        // console.log('image index: ', showContainerIndex)
 
         if (showContainerIndex !== -1) {
           this.current = showContainerIndex

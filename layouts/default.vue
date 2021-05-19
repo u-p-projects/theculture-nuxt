@@ -42,11 +42,20 @@ export default {
         x: 0,
         y: 0
       },
-      showCursor: false,
+      showCursor: true,
       playing: false
     }
   },
   mounted() {
+    // subscribe to showCursor updates
+    this.$store.subscribe((mutation, state) => {
+      if (mutation.type === 'time/setShowCursor') {
+        console.log('subscribe showCursor', state.time.showCursor)
+        this.showCursor = state.time.showCursor
+
+        console.log(this.showCursor)
+      }
+    })
   },
   methods: {
     updateCursor($evt) {
@@ -58,7 +67,6 @@ export default {
     toggleVideo(state) {
       this.playing = state
 
-      console.log(this.$refs.video)
       if (this.playing) {
         this.$refs.video.$el.play()
       } else {

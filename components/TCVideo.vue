@@ -2,7 +2,8 @@
   <video
     playsinline
     class="video"
-    @timeupdate="() => updateTime()">
+    @timeupdate="() => updateTime()"
+    @ended="() => ended()">
     <source
       type="video/mp4"
       src="~/assets/video/immersive-video.mp4" />
@@ -17,6 +18,9 @@ export default {
       const currentTime = this.$el.currentTime.toFixed(2)
 
       this.$store.commit('time/setCurrentTime', currentTime)
+    },
+    ended() {
+      this.$store.commit('time/setEnded', true)
     }
   }
 }

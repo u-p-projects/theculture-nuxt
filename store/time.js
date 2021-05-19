@@ -1,7 +1,8 @@
 export const state = () => ({
   currentTime: 0,
   isPlaying: false,
-  ended: false
+  ended: false,
+  showCursor: true
 })
 
 export const getters = {
@@ -13,6 +14,9 @@ export const getters = {
   },
   getEnded: (state) => {
     return state.ended
+  },
+  getShowCursor: (state) => {
+    return state.showCursor
   }
 }
 
@@ -25,5 +29,8 @@ export const mutations = {
   },
   setEnded: (state, ended) => {
     state.ended = ended
+  },
+  setShowCursor: (state, cursorState) => {
+    state.showCursor = cursorState
   }
 }
