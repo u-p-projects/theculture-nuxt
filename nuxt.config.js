@@ -18,14 +18,44 @@ export default {
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: 'The Culture' },
       { property: 'og:description', content: 'The Culture is a weekly conversation show focusing on film, music, TV, streaming, books and art.' },
+      { property: 'og:image', content: '/the-culture.jpg' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'The Culture' },
-      { name: 'twitter:description', content: 'The Culture is a weekly conversation show focusing on film, music, TV, streaming, books and art.' }
+      { name: 'twitter:image', content: '/the-culture.jpg' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ],
+    script: [
+      {
+        hid: 'google-tag-manager',
+        vmid: 'google-tag-manager',
+        innerHTML: `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MQGJ8VB');
+        `
+      }
+    ],
+    noscript: [
+      {
+        hid: 'noscript-google-tag-manager',
+        vmid: 'noscript-google-tag-manager',
+        innerHTML: `
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQGJ8VB"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        `,
+        body: true
+      },
+    ],
+    __dangerouslyDisableSanitizers: ['innerHTML'],
+    __dangerouslyDisableSanitizersByTagID: {
+      'google-tag-manager': ['innerHTML'],
+      'noscript-google-tag-manager': ['innerHTML']
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
