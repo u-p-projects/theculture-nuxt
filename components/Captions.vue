@@ -18,19 +18,19 @@ export default {
         },
         {
           time: [0.25, 3.5],
-          text: 'Schwartz Media is launching a brand new podcast'
+          text: 'Schwartz Media is launching a brand new podcast,'
         },
         {
           time: [3.5, 4.5],
-          text: 'The Culture'
+          text: 'The Culture.'
         },
         {
           time: [4.5, 6.8],
-          text: 'From the team the brought you 7am'
+          text: 'From the team that brought you 7am,'
         },
         {
           time: [6.8, 9],
-          text: 'Australia\'s most popular daily news podcast'
+          text: 'Australia\'s most popular daily news podcast,'
         },
         {
           time: [9, 13],
@@ -42,7 +42,7 @@ export default {
         },
         {
           time: [17, 19],
-          text: 'Hosted by me Osman Faruqi,'
+          text: 'Hosted by me, Osman Faruqi,'
         },
         {
           time: [19, 21.5],
@@ -50,11 +50,11 @@ export default {
         },
         {
           time: [21.5, 24],
-          text: 'of pop culture and entertainment.'
+          text: 'of pop culture and entertainment,'
         },
         {
           time: [24, 26],
-          text: 'With the help of Australia\'s best critics.'
+          text: 'with the help of Australia\'s best critics.'
         },
         {
           time: [26.1, 29],
@@ -74,7 +74,7 @@ export default {
         },
         {
           time: [37, 40],
-          text: 'Just search The Culture in Apple podcasts'
+          text: 'Just search \'The Culture\' in Apple podcasts'
         },
         {
           time: [40, 43],
@@ -82,7 +82,7 @@ export default {
         },
         {
           time: [43, 44.4],
-          text: 'The Culture coming soon.'
+          text: 'The Culture. Coming soon.'
         },
         {
           time: [44.5, 100],
