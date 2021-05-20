@@ -2,7 +2,7 @@
   <div
     class="app"
     @mousemove="updateCursor">
-    <Top />
+    <Top @update="(state) => toggleVideo(state)" />
 
     <ImageContainers />
 
@@ -65,6 +65,8 @@ export default {
     toggleVideo(state) {
       this.playing = state
 
+      this.$store.commit('time/setIsPlaying', state)
+
       if (this.playing) {
         this.$refs.video.$el.play()
       } else {
@@ -76,24 +78,6 @@ export default {
 </script>
 
 <style lang="scss">
-@font-face {
-  font-family:'marr-sans';
-  src:
-    url('~assets/fonts/marr-sans/MarrSansCondWeb-Medium.woff2') format('woff2'),
-    url('~assets/fonts/marr-sans/MarrSansCondWeb-Medium.woff') format('woff');
-  font-weight:500;
-  font-style:normal;
-}
-
-@font-face {
-  font-family:'nhg';
-  src:
-    url('~assets/fonts/nhg/NeueHaasGrotDisp-75Bold-Web.woff2') format('woff2'),
-    url('~assets/fonts/nhg/NeueHaasGrotDisp-75Bold-Web.woff') format('woff');
-  font-weight:500;
-  font-style:normal;
-}
-
 :root {
   --app-height: 100%;
 }
