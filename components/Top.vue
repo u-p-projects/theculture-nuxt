@@ -31,32 +31,45 @@
           </template>
         </p>
       </li>
+
       <li
         v-if="currentItems.length === 2"
-        class="item item--break"></li>
+        class="item item--break"
+        :class="[
+          currentItems.length === 2 && currentItems.includes(3) ? 'item--break--small' : 'item--break--large'
+        ]"></li>
+
       <li class="item item--show menu">
         <TCMenuButton
           :active="menuActive"
           :menuColor="currentColor === '#000' ? 'black' : 'white'"
-          @toggle="(state) => menuActive = state" />
+          @toggle="(active) => toggleMenu(active)" />
       </li>
       <li class="item item--show"></li>
     </ul>
 
     <Dropdown
       :active="menuActive"
-      @toggle="(active) => menuActive = active" />
+      @toggle="(active) => toggleMenu(active)" />
   </header>
 </template>
 
 <script>
 import TCMenuButton from '@/components/TCMenuButton'
 import Dropdown from '@/components/Dropdown'
+
 export default {
   name: 'Top',
   components: {
     TCMenuButton,
     Dropdown
+  },
+  data() {
+    return {
+      currentItems: [],
+      currentColor: '#000',
+      menuActive: false
+    }
   },
   computed: {
     items() {
@@ -82,13 +95,13 @@ export default {
         {
           name: 'Apple Podcasts',
           type: 'link',
-          link: 'https://podcasts.apple.com/au/podcast/7am/id1461999702',
+          link: 'https://podcasts.apple.com/us/podcast/the-culture/id1566825258',
           time: [39, 46]
         },
         {
           name: 'Spotify',
           type: 'link',
-          link: 'https://podcasts.apple.com/au/podcast/7am/id1461999702',
+          link: 'https://open.spotify.com/show/4Byp0KBg4kyyCkk7CNgyW3',
           time: [40, 46]
         }
       ]
@@ -134,13 +147,6 @@ export default {
       ]
     }
   },
-  data() {
-    return {
-      currentItems: [],
-      currentColor: '#000',
-      menuActive: false
-    }
-  },
   mounted() {
     // subscribe for time updates from video playing (@timeupdate)
     this.$store.subscribe((mutation, state) => {
@@ -180,6 +186,18 @@ export default {
         }
       }
     })
+  },
+  methods: {
+    toggleMenu(active) {
+      this.menuActive = active
+
+      console.log(active)
+
+      // if menu is opened stop video / audio
+      if (active) {
+        this.$emit('update', !active)
+      }
+    }
   }
 }
 </script>
@@ -210,14 +228,22 @@ $padding: 20px;
       display: none;
       text-transform: uppercase;
       justify-content: center;
-      min-width: 174px;
+      // min-width: 174px;
 
       &--show, &--break {
         display: flex;
       }
 
       &--break {
-        min-width: 180px;
+        min-width: 174px;
+
+        &--small {
+          min-width: 103px;
+        }
+
+        &--large {
+          min-width: 174px;
+        }
       }
 
       a {

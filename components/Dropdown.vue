@@ -11,7 +11,7 @@
         </li>
         <li class="link">
           <a
-            href="https://podcasts.apple.com/au/podcast/7am/id1461999702"
+            href="https://podcasts.apple.com/us/podcast/the-culture/id1566825258"
             target="_blank"
             rel="noopener noreferrer">
             Apple Podcasts
@@ -19,7 +19,7 @@
         </li>
         <li class="link">
           <a
-            href="https://podcasts.apple.com/au/podcast/7am/id1461999702"
+            href="https://open.spotify.com/show/4Byp0KBg4kyyCkk7CNgyW3"
             target="_blank"
             rel="noopener noreferrer">
             Spotify
@@ -149,8 +149,9 @@ export default {
         }
 
         a {
+          border-bottom: 2px solid transparent;
           &:hover {
-            border-bottom: 2px solid;
+            border-bottom-color: #fff;
           }
         }
         &.menu {
@@ -179,6 +180,11 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
+    background: #ffd600;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    color: black;
 
     .row {
       &--information {
