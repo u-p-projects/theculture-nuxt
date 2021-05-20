@@ -1,6 +1,9 @@
 <template>
   <div
     class="app"
+    :class="[
+      $store.state.time.isPlaying ? 'app--play' : 'app--pause'
+    ]"
     @mousemove="updateCursor">
     <Top @update="(state) => toggleVideo(state)" />
 
@@ -102,5 +105,23 @@ html {
 .app {
   width: 100vw;
   min-height: 100vh;
+
+  @include mobile {
+    &--pause {
+      &:after {
+        content: '';
+        width: 70px;
+        height: 70px;
+        display: block;
+        // background: red;
+        background-image: url('~assets/img/cursor-play.svg');
+        position: fixed;
+        pointer-events: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
 }
 </style>

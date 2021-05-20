@@ -242,7 +242,8 @@ export default {
     }
     .body {
       display: inline-block;
-      padding: 10px 10px 100px 10px;
+      padding: 12px 12px 20px 12px;
+      margin: 10px 10px 120px 10px;
       .row {
         &--information {
           flex-direction: column;
@@ -269,7 +270,7 @@ export default {
                 margin: 10px;
                 margin-bottom: calc(5vh - 10px);
                 padding: 20px;
-                border: 2px solid white;
+                border: 2px solid #000;
                 border-radius: 50px;
               }
             }
