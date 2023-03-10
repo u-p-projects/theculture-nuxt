@@ -1,0 +1,19 @@
+// Fonts
+$default:'marr-sans', helvetica, sans-serif;
+
+// Colors
+$veryDarkGrey: rgba(80, 80, 80, 1);
+$darkGrey: rgba(110, 110, 110, 1);
+$lightGrey: rgba(180, 180, 180, 1);
+$midGrey: rgba(155, 155, 155, 1);
+$captionTextGrey: $darkGrey;
+$black: #000;
+$white: #fff;
+$yellow: rgba(240,240,0,1);
+$green: rgba(150,255,150,1);
+
+// Transitions
+$veryFastTransitionSpeed:.1s;
+$fastTransitionSpeed:.4s;
+$slowTransitionSpeed:1s;
+$verySlowTransitionSpeed:2s;
