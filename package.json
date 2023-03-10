@@ -5,6 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "generate-preview": "nuxt generate && nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {

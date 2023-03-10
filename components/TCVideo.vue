@@ -6,7 +6,7 @@
     @ended="() => ended()">
     <source
       type="video/mp4"
-      src="~/assets/video/immersive-video-480x320.mp4" />
+      src="/immersive-video-480x320.mp4" />
   </video>
 </template>
 

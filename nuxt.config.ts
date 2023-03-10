@@ -2,6 +2,9 @@
 const baseUrl = process.env.NUXT_APP_BASE_URL || '/'
 
 export default defineNuxtConfig({
+    experimental: {
+        payloadExtraction: false,
+    },
     app: {
         head: {
             htmlAttrs: {lang: 'en'},
@@ -36,8 +39,7 @@ export default defineNuxtConfig({
     modules: [
         '@pinia/nuxt',
     ],
-    // Non SSR is faster for Dev
-    ssr: process.env.NODE_ENV !== 'development',
+    ssr: false,
     nitro: {
         minify: process.env.NODE_ENV !== 'development',
     },
